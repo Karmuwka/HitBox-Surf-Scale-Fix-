@@ -7,6 +7,15 @@ ArrayList g_hModelList;
 ArrayList g_hDefaultModel;
 Handle h_convar_Coef;
 
+public Plugin myinfo = 
+{
+	name = "Fix hitbox size for surf-combat",
+	author = ".KarmA",
+	description = "Multiple size of hitbox",
+	version = "1.0",
+	url = "https://steamcommunity.com/id/i_t_s_Karma/"
+}
+
 enum {
     HB_head = 0,
     HB_neck,
@@ -32,7 +41,7 @@ enum {
 public void OnPluginStart(){
     g_hModelList = new ArrayList(1);
     g_hDefaultModel = new ArrayList(2, 1);
-    h_convar_Coef = CreateConVar("hb_size", "6");
+    h_convar_Coef = CreateConVar("hb_size", "2.5");
 
     HookEvent("player_spawn", HE_PlayerSpawned, EventHookMode_Post);
 
